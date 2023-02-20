@@ -11,20 +11,21 @@ import java.util.Calendar;
 /**
  * @author wangjiong
  * @create 2023/2/20 15:27
+ * 需要实现MethodInterceptor接口，重写intercept方法
  */
 public class CglibProxyCode implements MethodInterceptor {
 
-    private MyCode myCode;
+    private Object object;
 
-    public CglibProxyCode(MyCode myCode){
-        this.myCode = myCode;
+    public CglibProxyCode(Object object){
+        this.object = object;
     }
 
-    public MyCode getProxy(){
+    public Object getProxy(){
         Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(myCode.getClass());
+        enhancer.setSuperclass(object.getClass());
         enhancer.setCallback(this);
-        return (MyCode)enhancer.create();
+        return enhancer.create();
     }
 
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {

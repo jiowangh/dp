@@ -13,5 +13,40 @@
         <module>builder</module>
         <module>prototype</module>
         <module>proxy</module>
+        <module>bridge</module>
+        <module>decorator</module>
+        <module>adapter</module>
+        <module>facade</module>
+        <module>composite</module>
+        <module>flyweight</module>
+        <module>observer</module>
+        <module>template</module>
+        <module>strategy</module>
+        <module>chain</module>
+        <module>state</module>
+        <module>iterator</module>
+        <module>visitor</module>
+        <module>memento</module>
+        <module>command</module>
+        <module>interpreter</module>
+        <module>mediator</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.72</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
 </project>

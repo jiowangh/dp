@@ -12,7 +12,7 @@ public class Client {
         System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "proxy\\cglibproxy");
         MyCode myCode = new MyCode();
         System.out.println(myCode);
-        MyCode myCode1 =new CglibProxyCode(myCode).getProxy();
+        MyCode myCode1 =(MyCode) new CglibProxyCode(myCode).getProxy();
         System.out.println(myCode1);
         myCode1.code();
     }
